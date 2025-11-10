@@ -1,2 +1,4 @@
 # Task-2
-Task 1: Responsive 3-Section Layout Using Flexbox:  Create three content sections that stack vertically on mobile and line up horizontally  on desktop.  Result:  • On mobile → stacked sections (In one Column)  • On desktop → 3 boxes in a row
+Task 2: Simple Photo Gallery Using Grid
+ Result:
+A neat, responsive gallery that resizes smoothly for all screen sizes.
