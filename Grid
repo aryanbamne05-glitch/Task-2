@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Grid Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="path/to/your/image1.jpg" alt="Description of image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="path/to/your/image2.jpg" alt="Description of image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="path/to/your/image3.jpg" alt="Description of image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="path/to/your/image4.jpg" alt="Description of image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="path/to/your/image5.jpg" alt="Description of image 5">
+        </div>
+        <div class="gallery-item">
+            <img src="path/to/your/image6.jpg" alt="Description of image 6">
+        </div>
+        </div>
+
+</body>
+</html>
+
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* 1. Grid Container Setup */
+.gallery-container {
+    display: grid;
+    /* This line is key for a responsive grid: */
+    /* It automatically creates columns based on available space and a minimum size (300px) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px; /* Spacing between grid items */
+    max-width: 1200px; /* Limit the max width of the gallery */
+    margin: 0 auto; /* Center the gallery on the page */
+}
+
+/* 2. Image Item Styling */
+.gallery-item {
+    overflow: hidden; /* Important for containing the image */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Simple hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 3. Image Styling */
+.gallery-item img {
+    width: 100%; /* Image takes up the full width of its container */
+    height: 100%; /* Image takes up the full height of its container */
+    object-fit: cover; /* **Key for not distorting images:** Covers the container while maintaining aspect ratio */
+    display: block; /* Removes any default bottom spacing for images */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Zoom in effect on hover */
+}
+
+/* 4. Optional: Media Query for very small screens */
+/* On tiny screens (e.g., smaller phones), force a single column */
+@media (max-width: 400px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+}
+
